@@ -1,0 +1,11 @@
+---
+import { mediaURL } from "@/utils/media.ts"
+interface Props {
+    src: string;
+    alt: string;
+}
+const { src, alt} = Astro.props;
+---
+<div class="flex justify-center">
+<img src={ mediaURL(src)} alt={alt} />
+</div>

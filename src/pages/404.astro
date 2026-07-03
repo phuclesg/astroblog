@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page not found - Quiet Pages" description="The page could not be found.">
+  <div class="mx-auto max-w-2xl px-5 py-32 text-center">
+    <div class="font-serif text-7xl font-semibold tracking-tight">404</div>
+    <h1 class="mt-4 font-serif text-2xl font-semibold">Không tìm nội dung</h1>
+    <p class="mt-3 text-muted-foreground">
+      Trang bạn đang tìm kiếm đã biến mất. Có thể nó đã được di chuyển, đổi tên hoặc thậm chí chưa từng tồn tại.
+    </p>
+    <div class="mt-6 flex justify-center gap-3">
+      <a href="/" class="rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90">
+        Quay lại trang chủ
+      </a>
+      <a href="/blog" class="rounded-md border border-border px-4 py-2 text-sm hover:bg-muted">
+        Duyệt trong mục bài viết
+      </a>
+    </div>
+  </div>
+</BaseLayout>

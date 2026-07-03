@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { SITE, authors } from "../lib/blog-data.js";
+---
+
+<BaseLayout
+  title={`Giới thiệu - ${SITE.name}`}
+  description={`About ${SITE.name}: an independent magazine on writing, design, and the slow web.`}
+  canonical="/about"
+>
+  <div class="mx-auto max-w-3xl px-5 py-12">
+    <Breadcrumbs items={[{ label: "Trang chủ", to: "/" }, { label: "Giới thiệu" }]} />
+
+    <header class="mt-6">
+      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Giới thiệu</div>
+      <h1 class="mt-2 font-serif text-5xl font-semibold leading-[1.05] tracking-tight">
+        Chuyên trang về Nam Kỳ xưa và Sài Gòn xưa
+      </h1>
+    </header>
+
+    <div class="prose-article mt-10">
+      <p>
+        {SITE.name} là một góc nhỏ lưu giữ những câu chuyện về miền Nam Việt Nam qua từng giai đoạn lịch sử. 
+        Từ Sài Gòn nhộn nhịp một thời, những vùng quê miền Tây sông nước, đến con người, món ăn và nếp sống đã góp phần tạo nên bản sắc của vùng đất này.
+      </p>
+      <p>
+        Trang web được xây dựng với mong muốn tổng hợp những dữ kiện từ nhiều nguồn để chia sẻ cho mọi người, để hiểu hơn về một miền Nam xưa kia.
+        Mỗi bài viết điều hướng đến giúp đọc giả dễ đọc và dễ hiểu về lịch sử, văn hóa và đời sống của người Nam kỳ.
+      </p>
+      <h2 id="what-we-publish">Nội dung trên Nam kỳ xưa:</h2>
+      <p>
+        <ul>
+          <li>Nhân vật có ảnh hưởng đến vùng đất Nam Kỳ.</li>
+          <li>Địa danh, công trình và những góc phố xưa.</li>
+          <li>Món ăn, văn hóa ẩm thực và nếp sống miền Nam.</li>
+          <li>Phong tục, tập quán và những câu chuyện dân gian.</li>
+          <li>Hình ảnh, tư liệu và những ký ức còn được lưu giữ.</li>
+        </ul>
+          <p>Chúng tôi tin rằng lịch sử không chỉ nằm trong những sự kiện lớn, mà còn hiện diện trong bữa cơm gia đình, tiếng rao buổi sớm, những con đường cũ và những câu chuyện được truyền từ thế hệ này sang thế hệ khác.</p>
+
+          <p>Nam Kỳ Xưa không đặt mục tiêu trở thành một kho tư liệu hoàn hảo. Đây là một dự án được xây dựng và bổ sung từng ngày. Nếu bạn phát hiện thông tin cần chỉnh sửa hoặc có tư liệu quý muốn chia sẻ, chúng tôi luôn trân trọng mọi ý kiến đóng góp để nội dung ngày càng đầy đủ và chính xác hơn.</p>
+
+          <p>Cảm ơn bạn đã ghé thăm Nam Kỳ Xưa. Hy vọng mỗi bài viết sẽ mang đến cho bạn thêm một góc nhìn về vùng đất phương Nam và những giá trị đã làm nên bản sắc của nó.</p>
+      </p>
+      <p class="font-bold italic">"Giữ lại những câu chuyện cũ, để thế hệ sau vẫn còn biết về một Nam Kỳ đã từng như thế."</p>
+    </div>
+
+    <section class="mt-12 border-t border-border pt-10">
+      <h2 class="font-serif text-2xl font-semibold tracking-tight">Người đóng góp</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          authors.map((author) => (
+            <a href={`/authors/${author.slug}`} class="group flex items-start gap-3">
+              <img src={author.avatar} alt="" width="48" height="48" class="h-12 w-12 rounded-full" />
+              <div>
+                <div class="font-serif text-base font-semibold group-hover:text-primary">{author.name}</div>
+                <div class="mt-1 text-sm text-muted-foreground">{author.bio}</div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>
