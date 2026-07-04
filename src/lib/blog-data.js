@@ -35,7 +35,10 @@ export const tags = [
   { slug: "duong-pho", name: "Món đường phố" },
 ];
 
-const isoDate = (date) => date?.toISOString().slice(0, 10);
+const isoDate = (date) =>  {
+  if (!date) return undefined;
+  return date.toLocaleDateString('en-CA', { timeZone: 'Asia/Ho_Chi_Minh' });
+};;
 
 export const imageSrc = (image) => (typeof image === "string" ? image : image?.src);
 
