@@ -17,7 +17,7 @@ export const authors = [
 
 export const categories = [
   { slug: "nhan-vat", name: "Nhân vật" },
-  { slug: "cuoc-song", name: "Cuộc sống" },
+  { slug: "doi-song", name: "Đời sống" },
   { slug: "mon-ngon", name: "Món ngon" },
 ];
 
