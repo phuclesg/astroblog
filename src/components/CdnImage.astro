@@ -4,12 +4,13 @@ interface Props {
     src: string;
     alt: string;
     caption: string;
+    credit: string;
 }
-const { src, alt, caption} = Astro.props;
+const { src, alt, caption, credit} = Astro.props;
 ---
 <figure class="flex items-center flex-col">
     <img src={ mediaURL(src)} alt={alt} loading="lazy" decoding="async" />
-    {caption && (
-        <figcaption class="text-sm mb-2">{caption}.</figcaption>
+    {caption, credit && (
+        <figcaption class="text-xs mb-10">{caption}. Nguồn: {credit} </figcaption>
     )}
 </figure>
