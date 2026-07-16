@@ -124,11 +124,9 @@ console.log(featured);
                     class="h-7 w-7 rounded-full"
                   />
                   <a href={`/authors/${featuredAuthor.slug}`} class="hover:text-foreground">{featuredAuthor.name}</a>
-                  <span>&middot;</span>
                 </>
               )
             }
-            <span>{featured.readingTime} min read</span>
           </div>
           <a href={`/blog/${featured.slug}`} class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
             Đọc bài viết <Icon name="arrow-right" class="h-3.5 w-3.5" />

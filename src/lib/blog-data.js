@@ -86,7 +86,7 @@ export const adjacentPosts = async (post) => {
 };
 
 export const formatDate = (iso) =>
-  new Date(iso).toLocaleDateString("en-US", {
+  new Date(iso).toLocaleDateString("vi-VN", {
     year: "numeric",
     month: "long",
     day: "numeric",
