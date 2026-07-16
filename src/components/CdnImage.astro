@@ -3,9 +3,13 @@ import { mediaURL } from "@/utils/media.ts"
 interface Props {
     src: string;
     alt: string;
+    caption: string;
 }
-const { src, alt} = Astro.props;
+const { src, alt, caption} = Astro.props;
 ---
-<div class="flex justify-center">
-<img src={ mediaURL(src)} alt={alt} />
-</div>
+<figure class="flex items-center flex-col">
+    <img src={ mediaURL(src)} alt={alt} loading="lazy" decoding="async" />
+    {caption && (
+        <figcaption class="text-sm mb-2">{caption}.</figcaption>
+    )}
+</figure>
