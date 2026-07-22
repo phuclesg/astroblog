@@ -3,7 +3,7 @@ import "../styles.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE, imageSrc } from "../lib/blog-data.js";
-
+import "glightbox/dist/css/glightbox.css"
 const {
   title = `${SITE.name} - A quiet magazine on writing, design, and the slow web`,
   description = SITE.description,
@@ -94,6 +94,17 @@ const ogImageUrl = absoluteUrl(ogImage);
       <Header />
       <main id="main-content" class="flex-1">
         <slot />
+        <script>
+            import GLightbox from "glightbox";
+
+            window.addEventListener("DOMContentLoaded", () => {
+              console.log(document.querySelectorAll(".glightbox"));
+
+              GLightbox({
+                selector: ".glightbox",
+              });
+            });
+          </script>
       </main>
       <Footer flush={flushFooter} />
     </div>
