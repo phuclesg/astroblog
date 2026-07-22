@@ -2,7 +2,6 @@
 import { mediaURL } from "@/utils/media.ts"
 interface Props {
     src: string;
-    alt: string;
     caption: string;
     credit: string;
 }
@@ -10,7 +9,7 @@ const { src, alt, caption, credit} = Astro.props;
 ---
 <figure class="flex items-center flex-col">
     <a href={mediaURL(src)} class="glightbox">
-        <img src={ mediaURL(src)} alt={alt} loading="lazy" decoding="async" />
+        <img src={ mediaURL(src)} alt={caption} loading="lazy" decoding="async" />
     </a>
     {(caption || credit) && (
     <figcaption class="text-xs mb-8">
