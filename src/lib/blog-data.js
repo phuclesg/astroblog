@@ -33,6 +33,9 @@ export const tags = [
 
   { slug: "dac-san", name: "Đặc sản"  },
   { slug: "duong-pho", name: "Món đường phố" },
+
+  { slug: "hinh-anh", name: "Hình ảnh" },
+  { slug:"hinh-sai-gon-xua", name: "Hình Sài Gòn xưa" },
 ];
 
 const isoDate = (date) =>  {

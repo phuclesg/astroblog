@@ -1,0 +1,18 @@
+---
+date: "2026-07-23"
+title: "Hình ảnh sài gòn chợ lớn thế kỷ 19"
+excerpt: "Những hình ảnh thế kỷ 19 của Sài Gòn Chợ Lớn"
+author: "phuc-map"
+thumbnail: "./cover.jpg"
+category: "hinh-anh"
+tags: 
+    - "hinh-sai-gon-xua"
+---
+import CdnImage from "@/components/CdnImage.astro"
+
+Những hình ảnh cũ của thế kỷ 19 về Sài Gòn - Chợ Lớn
+
+{ Array.from({ length:14 }, (_,i) => 
+
+<CdnImage src={`/images/sai-gon-18xx-${i+1}.webp`} caption="Sài Gòn - Chợ Lớn thế kỷ 19" credit="internet" />
+)}
