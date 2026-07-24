@@ -3,27 +3,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PostCard from "../../components/PostCard.astro";
 import Icon from "@/components/Icon.astro";
-
-// Import trực tiếp từ blog-data.js của ông
 import { postsByCategory, tags, getTag, SITE } from "@/lib/blog-data.js";
 
-// 1. Lấy tất cả bài viết có tag "hinh-anh" 
 const galleryPosts = await postsByCategory("hinh-anh");
-
-// 2. Lấy ra danh sách các Tag phụ có trong các bài gallery
+// lấy dữ liệu tags trong file mdx làm sạch
 const rawSubTagSlugs = [...new Set(
   galleryPosts.flatMap((post) => post.tags || [])
 )].filter((slug) => slug !== "hinh-anh");
 
 // 3. Map các slug đó với mảng tags khai báo sẵn trong blog-data.js để lấy Name + Slug
-const subTags = rawSubTagSlugs
-  .map((slug) => getTag(slug))
-  .filter(Boolean); // Bỏ các tag null/undefined nếu lỡ quên khai báo
+const subTags = rawSubTagSlugs.map((slug) => getTag(slug)).filter(Boolean);
 ---
 
 <BaseLayout
   title={`Thư viện ảnh - ${SITE.name}`}
-  description="Nơi ký ức nằm trong món ăn, con người và những câu chuyện cũ."
+  description="Nơi ký ức nằm trong từng tấm hình xưa."
   canonical="/gallery"
 >
   <div class="mx-auto max-w-4xl px-5 py-12" data-archive>

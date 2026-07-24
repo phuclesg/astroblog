@@ -14,12 +14,12 @@ import {
   getCategory,
   formatDate,
 } from "../lib/blog-data.js";
+import { AstroResponseHeadersReassigned } from "astro/dist/core/errors/errors-data";
 
 const featured = await featuredPost();
 const featuredAuthor = getAuthor(featured.author);
 const featuredCategory = getCategory(featured.category);
-const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slug);
-console.log(featured);
+const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slug && post.category !== "hinh-anh");
 ---
 
 <BaseLayout

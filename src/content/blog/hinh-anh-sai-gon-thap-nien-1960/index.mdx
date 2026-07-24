@@ -1,0 +1,17 @@
+---
+date: 2026-07-24
+title: "Hình ảnh Sài Gòn thập niên 1960"
+excerpt: "Những hình ảnh gợi nhớ về một Sài Gòn hoa lệ"
+category: "hinh-anh"
+author: "phuc-map"
+thumbnail: "./cover.jpg"
+tags: 
+    - "hinh-anh-sai-gon"
+---
+import CdnImage from "@/components/CdnImage.astro"
+
+{
+    Array.from({length:27},(_,i) =>
+    <CdnImage src={`/images/sai-gon-1960s-${i + 1}.webp`} caption="Sài gòn thập niên 1960" />
+    )
+}
