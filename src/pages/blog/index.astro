@@ -6,7 +6,7 @@ import Icon from "../../components/Icon.astro";
 import { SITE, categories, sortedPosts, tags } from "../../lib/blog-data.js";
 
 const posts = (await sortedPosts()).filter((post) => post.category !== "hinh-anh");
-const newTags = tags.filter((tag) =>  !tag.slug.includes("hinh"));
+const newTags = tags.filter((tag) => !tag.slug.includes("hinh"));
 ---
 
 <BaseLayout
