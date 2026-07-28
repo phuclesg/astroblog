@@ -1,0 +1,23 @@
+---
+import 'vidstack/player/styles/default/theme.css';
+import 'vidstack/player/styles/default/layouts/video.css';
+
+import { defineCustomElement, MediaPlayerElement } from "vidstack/elements";
+
+defineCustomElement(MediaPlayerElement);
+interface Props {
+	src: string;
+}
+const {src} = Astro.props;
+---
+<media-player playsinline src={src}>
+  <media-provider></media-provider>
+  <media-video-layout></media-video-layout>
+  <!-- Other components that use/manage media state here. -->
+</media-player>
+
+<script>
+  import 'vidstack/player';
+  import 'vidstack/player/layouts/default';
+  import 'vidstack/player/ui';
+</script>
