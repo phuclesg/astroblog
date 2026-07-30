@@ -5,7 +5,7 @@ interface Props {
     caption: string;
     credit: string;
 }
-const { src, alt, caption, credit} = Astro.props;
+const { src, caption, credit} = Astro.props;
 ---
 <figure class="flex items-center flex-col">
     <a href={mediaURL(src)} class="glightbox">
