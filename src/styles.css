@@ -453,7 +453,7 @@
 
 
 img {
-    filter: sepia(60%);
+    filter: sepia(60%) saturate(90%);
 }
 img:hover {
     filter: sepia(0);
